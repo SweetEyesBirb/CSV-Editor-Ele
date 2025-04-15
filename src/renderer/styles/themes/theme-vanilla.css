@@ -1,0 +1,27 @@
+:root {
+    --cream: #ffffb7ff;
+    --vanilla: #fff8a5ff;
+    --flax: #fff599ff;
+    --maize: #fff185ff;
+    --maize-2: #ffee70ff;
+    --maize-3: #ffec5cff;
+    --maize-4: #ffe747ff;
+    --canary: #ffe433ff;
+    --school-bus-yellow: #ffdd1fff;
+    --school-bus-yellow-2: #ffda0aff;
+    --text-color: #333;
+}
+
+body {
+    background-color: var(--maize);
+  }
+
+  table {
+    background-color: var(--cream);
+    color: var(--text-color);
+  }
+
+.corner-cell, .header-cell, .index-cell{
+    color: var(--text-color);
+    background-color: var(--flax);
+  }

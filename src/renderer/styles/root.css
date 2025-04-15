@@ -1,0 +1,93 @@
+:root {
+    --bg-color-navy-1: #0d0021;
+    --bg-color-light: aliceblue;
+    --txt-color-light: aliceblue;
+    --txt-color-navy-1: #0d0021;
+    --bg-header-cell-lgray:#f0f0f0;
+    --bg-header-cell-navy-2: #160037;
+    --bg-index-cell-lgray: #e0e0e0;
+    --bg-corner-cell-gray: #ccc;
+  }
+
+
+/*
+Palettes:
+
+Italy 1800:
+https://coolors.co/palette/40643e-eeaf6c-b3332a-f7ebc7-092d2e
+
+--hunter-green: #40643eff;
+--fawn: #eeaf6cff;
+--fire-brick: #b3332aff;
+--dutch-white: #f7ebc7ff;
+--midnight-green: #092d2eff;
+
+
+Forest:
+https://coolors.co/palette/386641-6a994e-a7c957-f2e8cf-bc4749
+
+--hunter-green: #386641ff;
+--asparagus: #6a994eff;
+--yellow-green: #a7c957ff;
+--parchment: #f2e8cfff;
+--bittersweet-shimmer: #bc4749ff;
+
+
+Dark:
+https://coolors.co/palette/131316-1c1c21-26262c-2f3037-393a41-4b4c52-5b5c62-6a6b70
+
+--night: #131316ff;
+--raisin-black: #1c1c21ff;
+--raisin-black-2: #26262cff;
+--jet: #2f3037ff;
+--onyx: #393a41ff;
+--davys-gray: #4b4c52ff;
+--davys-gray-2: #5b5c62ff;
+--dim-gray: #6a6b70ff;
+
+
+Caribbean Holidays:
+https://coolors.co/palette/006466-065a60-0b525b-144552-1b3a4b-212f45-272640-312244-3e1f47-4d194d
+
+--caribbean-current: #006466ff;
+--midnight-green: #065a60ff;
+--midnight-green-2: #0b525bff;
+--midnight-green-3: #144552ff;
+--charcoal: #1b3a4bff;
+--prussian-blue: #212f45ff;
+--space-cadet: #272640ff;
+--dark-purple: #312244ff;
+--dark-purple-2: #3e1f47ff;
+--palatinate: #4d194dff;
+
+
+Moss:
+https://coolors.co/palette/e9f5db-dcebca-cfe1b9-c2d5aa-b5c99a-a6b98b-97a97c-849669-728359-606f49
+
+--nyanza: #e9f5dbff;
+--nyanza-2: #dcebcaff;
+--tea-green: #cfe1b9ff;
+--tea-green-2: #c2d5aaff;
+--olivine: #b5c99aff;
+--olivine-2: #a6b98bff;
+--olivine-3: #97a97cff;
+--moss-green: #849669ff;
+--reseda-green: #728359ff;
+--reseda-green-2: #606f49ff;
+
+
+Vanilla:
+https://coolors.co/palette/ffffb7-fff8a5-fff599-fff185-ffee70-ffec5c-ffe747-ffe433-ffdd1f-ffda0a
+
+--cream: #ffffb7ff;
+--vanilla: #fff8a5ff;
+--flax: #fff599ff;
+--maize: #fff185ff;
+--maize-2: #ffee70ff;
+--maize-3: #ffec5cff;
+--maize-4: #ffe747ff;
+--canary: #ffe433ff;
+--school-bus-yellow: #ffdd1fff;
+--school-bus-yellow-2: #ffda0aff;
+
+ */

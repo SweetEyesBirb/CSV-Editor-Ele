@@ -1,0 +1,15 @@
+{
+    "scripts": {
+        "start":"electron ."
+        },
+        "name":"csv-editor-ele",
+        "version":"1.0.0",
+        "main":"src/main.js",
+        "keywords":[],
+        "author":"",
+        "license":"ISC",
+        "description":"",
+        "devDependencies":{
+            "electron":"^35.1.5"
+            }
+        }

@@ -1,0 +1,14 @@
+@import url("../root.css");
+
+
+body {
+    background-color: var(--bg-color-light);
+  }
+
+/* .header-cell {
+    background-color: var(--bg-header-cell-lgray);
+} */
+
+.corner-cell, .header-cell, .index-cell {
+    color: var(--txt-color-navy-1);
+  }

@@ -1,0 +1,29 @@
+@import url('../root.css');
+
+:root {
+    --night: #131316ff;
+    --raisin-black: #1c1c21ff;
+    --raisin-black-2: #26262cff;
+    --jet: #2f3037ff;
+    --onyx: #393a41ff;
+    --davys-gray: #4b4c52ff;
+    --davys-gray-2: #5b5c62ff;
+    --dim-gray: #6a6b70ff;
+    --light-text: rgb(211, 216, 220);
+}
+
+body {
+    background-color: var(--night);
+}
+
+table {
+    background-color: var(--jet);
+    color: var(--light-text);
+}
+
+.corner-cell,
+.header-cell,
+.index-cell {
+    color: var(--light-text);
+    background-color: var(--onyx);
+}

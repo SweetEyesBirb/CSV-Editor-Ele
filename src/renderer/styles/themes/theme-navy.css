@@ -1,0 +1,24 @@
+@import url('../root.css');
+
+:root {
+  --navy-blue-1: #0d0021;
+  --navy-blue-2: #160037;
+  --navy-blue-3: #001143;
+  --text-color: aliceblue;
+  --bg-index-cell-lgray: #e0e0e0;
+  --bg-corner-cell-gray: #ccc;
+}
+
+body {
+    background-color: var(--navy-blue-1);
+  }
+
+  table {
+    background-color: var(--navy-blue-2);
+    color: var(--text-color);
+  }
+
+.corner-cell, .header-cell, .index-cell{
+    color: var(--text-color);
+    background-color: var(--navy-blue-3);
+  }

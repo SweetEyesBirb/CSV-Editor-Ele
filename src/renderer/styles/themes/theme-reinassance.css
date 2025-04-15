@@ -1,0 +1,22 @@
+:root {
+    --hunter-green: #40643eff;
+    --fawn: #eeaf6cff;
+    --fire-brick: #b3332aff;
+    --dutch-white: #f7ebc7ff;
+    --midnight-green: #092d2eff;
+    --text-color: #333;
+}
+
+body {
+    background-color: var(--midnight-green);
+  }
+
+  table {
+    background-color: var(--hunter-green);
+    color: var(--fawn);
+  }
+
+.corner-cell, .header-cell, .index-cell{
+    background-color: var(--fire-brick);
+    color: var(--dutch-white);
+  }

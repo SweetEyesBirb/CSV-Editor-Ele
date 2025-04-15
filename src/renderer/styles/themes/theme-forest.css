@@ -1,0 +1,22 @@
+:root {
+    --hunter-green: #386641ff;
+    --asparagus: #6a994eff;
+    --yellow-green: #a7c957ff;
+    --parchment: #f2e8cfff;
+    --bittersweet-shimmer: #bc4749ff;
+    --text-color: #172a1b;
+}
+
+body {
+    background-color: var(--hunter-green);
+  }
+
+  table {
+    background-color: var(--yellow-green);
+    color: var(--text-color);
+  }
+
+.corner-cell, .header-cell, .index-cell{
+    color: var(--text-color);
+    background-color: var(--asparagus);
+  }
