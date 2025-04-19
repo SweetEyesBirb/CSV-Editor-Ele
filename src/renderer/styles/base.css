@@ -37,11 +37,13 @@ th {
 
 .header-cell {
   position: sticky;
-  top: 0; /* remove this and the header does not stick */
+  top: 0;
+  /* remove this and the header does not stick */
   background-color: var(--bg-header-cell-lgray);
   font-weight: bold;
   min-width: 50px;
-  max-width: fit-content; /* col max-width will be as td max-width if content is < td max-width, otherwise header cell will be in charge of width */
+  max-width: fit-content;
+  /* col max-width will be as td max-width if content is < td max-width, otherwise header cell will be in charge of width */
   z-index: 2;
 }
 
@@ -68,7 +70,7 @@ td {
 
 /* .table-scroll {
   /* max-height: 500px; or whatever you want */
-  /* overflow: auto;
+/* overflow: auto;
 }*/
 
 /* @media (prefers-color-scheme: dark) {
@@ -83,3 +85,85 @@ td {
     color: var(--txt-color-dark);
   }
 } */
+
+.context-menu {
+  display: block;
+  position: absolute;
+  background-color: var(--bg-header-cell-lgray);
+  border: 1px solid #ccc;
+  box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  font-size: 16px;
+}
+
+.context-menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.context-menu li {
+  padding: 8px 12px;
+  cursor: pointer;
+}
+
+.context-menu li:hover {
+  background-color: #bcbbbb;
+}
+
+/* #toast {
+  position: fixed;
+  top: 20px;
+  background-color: #323232;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 4px;
+  display: none;
+  z-index: 1001;
+} */
+
+#snackbar {
+visibility: hidden;
+min-width: 250px;
+margin-left: -125px;
+background-color: #333;
+color: #fff;
+text-align: center;
+border-radius: 2px;
+padding: 16px;
+position: fixed;
+z-index: 1;
+left: 50%;
+bottom: 30px;
+font-size: 17px;
+}
+
+#snackbar.show {
+  visibility: visible;
+  -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+  animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+
+@-webkit-keyframes fadein {
+  from {bottom: 0; opacity: 0;} 
+  to {bottom: 30px; opacity: 1;}
+}
+
+@keyframes fadein {
+  from {bottom: 0; opacity: 0;}
+  to {bottom: 30px; opacity: 1;}
+}
+
+@-webkit-keyframes fadeout {
+  from {bottom: 30px; opacity: 1;} 
+  to {bottom: 0; opacity: 0;}
+}
+
+@keyframes fadeout {
+  from {bottom: 30px; opacity: 1;}
+  to {bottom: 0; opacity: 0;}
+}
+
+.invalid-char {
+  border: 2px solid red;
+}

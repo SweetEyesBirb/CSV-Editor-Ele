@@ -2,13 +2,23 @@
 
 
 body {
-    background-color: var(--bg-color-light);
-  }
+  background-color: var(--bg-color-light);
+}
 
 /* .header-cell {
     background-color: var(--bg-header-cell-lgray);
 } */
 
-.corner-cell, .header-cell, .index-cell {
-    color: var(--txt-color-navy-1);
-  }
+.corner-cell,
+.header-cell,
+.index-cell {
+  color: var(--txt-color-navy-1);
+}
+
+.context-menu {
+  background-color: var(--bg-header-cell-lgray);
+}
+
+.context-menu li:hover {
+  background-color: #bcbbbb;
+}
