@@ -157,7 +157,7 @@ async function loadFile(filePath) {
 
 
 // Called when app loads to create an empty grid
-function createEmptyGrid(rows = 100, cols = 20) {
+function createEmptyGrid(rows = 20, cols = 20) {
   const table = document.createElement('table');
 
   for (let i = 0; i <= rows; i++) {
@@ -285,10 +285,38 @@ document.addEventListener('contextmenu', (e) => {
   }
 });
 
-document.addEventListener('click', () => {
-  contextMenuHeader.style.display = 'none';
-  contextMenuIndex.style.display = 'none';
+// document.addEventListener('click', (e) => {
+//   // If the click target is outside the context menus, hide them
+//   const quantityEls = document.querySelectorAll('.quantity');
+
+//   if (!contextMenuIndex.contains(e.target) && !contextMenuHeader.contains(e.target)) {
+//     contextMenuHeader.style.display = 'none';
+//     contextMenuIndex.style.display = 'none';
+//   } else if (contextMenuIndex.contains(e.target) || contextMenuHeader.contains(e.target)) {
+//     console.log("You clicked in the context menu", e.target)
+//     // console.log(insQuantityOption)
+//     quantityEls.forEach(ele => {
+//       // console.log(ele.className)
+//       if (!ele.contains(e.target)) {
+//         contextMenuHeader.style.display = 'none';
+//         contextMenuIndex.style.display = 'none';
+//         console.log("You clicked not on a quantity element", e.target)
+//       }
+//     })
+
+//   }
+// });
+
+document.addEventListener('click', (e) => {
+  const clickedInsideContextMenu = contextMenuIndex.contains(e.target) || contextMenuHeader.contains(e.target);
+  const clickedOnQuantityElement = [...document.querySelectorAll('.quantity')].some(el => el.contains(e.target));
+
+  if (!clickedInsideContextMenu || !clickedOnQuantityElement) {
+    contextMenuHeader.style.display = 'none';
+    contextMenuIndex.style.display = 'none';
+  }
 });
+
 
 document.getElementById('insert-col-left').addEventListener('click', () => {
   console.log('Insert column left of', selectedColNumber);
@@ -353,11 +381,29 @@ document.getElementById('insert-row-above').addEventListener('click', () => {
 document.getElementById('insert-row-below').addEventListener('click', () => {
   console.log('Insert row below of', selectedRowNumber);
 
+  insertMultipleRows(selectedRowNumber, 1)
+  reindexTable();
+});
+
+
+document.getElementById('add-row-quantity').addEventListener('keydown', function (e) {
+  if (e.key === 'Enter') {
+    const amount = parseInt(this.value, 10);
+    if (!isNaN(amount) && amount > 0) {
+      insertMultipleRows(selectedRowNumber, amount);
+      contextMenuIndex.style.display = 'none';
+      this.value = ''; // Clear input
+    }
+  }
+  reindexTable();
+});
+
+function insertMultipleRows(rowNumber, rowAmount) {
   const allRows = document.querySelectorAll('#tableContainer > table > .row');
   let targetRow = null;
 
   allRows.forEach(row => {
-    if (row.getAttribute('tb-row') == selectedRowNumber) {
+    if (row.getAttribute('tb-row') == rowNumber) {
       targetRow = row;
     }
   });
@@ -365,11 +411,39 @@ document.getElementById('insert-row-below').addEventListener('click', () => {
   if (!targetRow) return;
 
   const colCount = targetRow.querySelectorAll('td').length;
-  const newRow = createEmptyRow(Number(selectedRowNumber) + 1, colCount);
+  for (i=1; i <= rowAmount; i++) {
+  const newRow = createEmptyRow(Number(selectedRowNumber) + i, colCount);
 
   targetRow.parentNode.insertBefore(newRow, targetRow.nextSibling);
+  }
+}
+
+
+document.getElementById('delete-row-quantity').addEventListener('keydown', function (e) {
+  if (e.key === 'Enter') {
+    const targetRow = parseInt(this.value, 10);
+    if (!isNaN(targetRow) && targetRow > 0) {
+      deleteMultipleRows(selectedRowNumber, targetRow);
+      contextMenuIndex.style.display = 'none';
+      this.value = '';
+    }
+  }
   reindexTable();
 });
+
+
+function deleteMultipleRows(startRow, endRow) {
+  const rows = document.querySelectorAll('#tableContainer > table > .row');
+
+  rows.forEach(row => {
+    const rowIndex = parseInt(row.getAttribute('tb-row'), 10);
+    if (rowIndex >= startRow && rowIndex <= endRow) {
+      row.remove();
+      console.log('Removed row', rowIndex);
+    }
+  });
+}
+
 
 // Delete row logic
 document.getElementById('delete-row').addEventListener('click', () => {
@@ -604,7 +678,7 @@ function validateCellContent(cell, shToast = true) {
   if (!allowNonEnglish && /[^\x00-\x7F]/.test(text)) {
     cell.classList.add('invalid-char');
     // Optional: replace text, warn user, etc.
-    console.log(`${cell} contains non-english chars. Please use English characters`)
+    console.log(`Cell at row-${cell.getAttribute('data-row')}:col-${parseInt(cell.getAttribute('data-col')) + 1} contains non-english chars. Please use English characters`)
     if (shToast) {
       showToast("Please use English characters")
     }
