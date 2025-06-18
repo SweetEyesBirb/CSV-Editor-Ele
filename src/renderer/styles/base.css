@@ -9,14 +9,6 @@
   font-family: 'Albert Sans', 'Times New Roman', Times, serif, sans-serif;
 }
 
-/* html {
-  background-color: var(--bg-color-light);
-} */
-
-/* body {
-  background-color: var(--bg-color-light);
-} */
-
 #table-wrapper {
   padding: 50 0 10 0;
 }
@@ -68,31 +60,13 @@ td {
   border: 1px solid #999;
 }
 
-/* .table-scroll {
-  /* max-height: 500px; or whatever you want */
-/* overflow: auto;
-}*/
-
-/* @media (prefers-color-scheme: dark) {
-  body {
-    background-color: var(--bg-color-dark);
-  }
-  .theme-dark {
-    background: var(--bg-color-dark);
-    color: var(--txt-color-light);
-  }
-  .corner-cell, .header-cell, .index-cell {
-    color: var(--txt-color-dark);
-  }
-} */
-
 .context-menu {
-  display: block;
+  display: none;
   position: absolute;
   background-color: var(--bg-header-cell-lgray);
   border: 1px solid #ccc;
   box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.2);
-  z-index: 1000;
+  z-index: 100;
   font-size: 16px;
 }
 
@@ -110,17 +84,6 @@ td {
 .context-menu li:hover {
   background-color: #bcbbbb;
 }
-
-/* #toast {
-  position: fixed;
-  top: 20px;
-  background-color: #323232;
-  color: white;
-  padding: 10px 20px;
-  border-radius: 4px;
-  display: none;
-  z-index: 1001;
-} */
 
 #snackbar {
 visibility: hidden;
