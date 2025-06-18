@@ -1,6 +1,7 @@
 </html>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,35 +10,49 @@
   <link id="themeStylesheet" rel="stylesheet" href="./styles/themes/theme-light.css">
   <script src="./scripts/renderer.js" defer></script>
 </head>
+
 <body class="themed">
   <!-- <h1>CSV Editor</h1> -->
   <!-- <input type="file" id="fileInput" accept=".csv" /> -->
   <div id="table-wrapper">
-  <div id="tableContainer" class="table-scroll themed"></div>
-</div>
+    <div id="tableContainer" class="table-scroll themed"></div>
+  </div>
 
-<!-- Reusable elements -->
-<div id="contextMenu-h" class="context-menu">
-  <ul>
-    <li id="insert-col-left">Insert Column Left</li>
-    <li id="insert-col-right">Insert Column Right</li>
-    <li id="delete-col">Delete Column</li>
-    <li id="empty-col">Empty Column</li>
-  </ul>
-</div>
+  <!-- Reusable elements -->
+  <div id="contextMenu-h" class="context-menu">
+    <ul>
+      <li id="insert-col-left">Insert Column Left</li>
+      <li id="insert-col-right">Insert Column Right</li>
+      <li id="insert-col-amount" class="quantity">Insert Cols:
+        <label for="col-quantity"></label>
+        <input type="number" id="col-quantity" class="quantity" name="col-quantity" min="1" max="1000">
+      </li>
+      <li id="delete-col">Delete Column</li>
+      <li id="empty-col">Empty Column</li>
+    </ul>
+  </div>
 
-<div id="contextMenu-i" class="context-menu">
-  <ul>
-    <li id="insert-row-above">Insert Row Above</li>
-    <li id="insert-row-below">Insert Row Below</li>
-    <li id="delete-row">Delete Row</li>
-    <li id="empty-row">Empty Row</li>
-  </ul>
-</div>
+  <div id="contextMenu-i" class="context-menu">
+    <ul>
+      <li id="insert-row-above">Insert Row Above</li>
+      <li id="insert-row-below">Insert Row Below</li>
+      <li id="insert-row-amount" class="quantity">Insert Rows:
+        <label for="add-row-quantity"></label>
+        <input type="number" id="add-row-quantity" class="quantity" name="add-row-quantity" min="1" max="1000">
+      </li>
+      <li id="empty-row">Empty Row</li>
+      <li id="delete-row-amount" class="quantity">Delete Rows Until:
+        <label for="delete-row-quantity"></label>
+        <input type="number" id="delete-row-quantity" class="quantity" name="delete-row-quantity" min="1" max="10000">
+      </li>
+      <li id="delete-row">Delete Row</li>
+    </ul>
+  </div>
 
-<div id="snackbar">
-</div>
+  <div id="snackbar">
+  </div>
 
 
 </body>
+
 </html>
