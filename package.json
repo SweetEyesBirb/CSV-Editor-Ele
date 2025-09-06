@@ -1,15 +1,63 @@
 {
+    "name": "csv-editor-ele",
+    "productName": "Fabs CSV Editor",
+    "version": "1.0.0",
+    "main": "src/main.js",
+    "keywords": [
+        "CSV editor",
+        "forced UTF-8 encoding",
+        "simple CSV editor"
+    ],
+    "author": "SweetEyesBirb",
+    "license": "SEE LICENSE IN LICENSE.md",
+    "description": "A simple CSV editor that enforces utf-8 encoding avoiding compatibility issues. Feature can be turned off.",
     "scripts": {
-        "start":"electron ."
+        "start": "electron .",
+        "package": "build",
+        "dist": "electron-builder"
+    },
+    "devDependencies": {
+        "electron": "^35.1.5",
+        "electron-builder": "26.0.12"
+    },
+    "build": {
+        "appId": "com.SweetEyesBirb.Fabs-CSV-Editor",
+        "win": {
+            "target": "portable",
+            "icon": "src/assets/icons/csv_app_light.ico",
+            "artifactName": "${productName}-${version}-${os}.${ext}"
         },
-        "name":"csv-editor-ele",
-        "version":"1.0.0",
-        "main":"src/main.js",
-        "keywords":[],
-        "author":"",
-        "license":"ISC",
-        "description":"",
-        "devDependencies":{
-            "electron":"^35.1.5"
+        "portable": {
+            "artifactName": "${productName}-${version}-${os}.${ext}"
+        },
+        "files": [
+            "src/**/*",
+            "package.json",
+            "package-lock.json",
+            "license.md",
+            "readme.md",
+            "!**/locales/**",
+            "!**/*.map",
+            "!**/.*",
+            "!.*",
+            "!**/test{,s}/**",
+            "!**/__tests__/**",
+            "!brython*",
+            "!pyodide*",
+            "!pyscript*"
+        ],
+        "asar": true,
+        "asarUnpack": [],
+        "compression": "maximum",
+        "extraResources": [
+            {
+                "from": "node_modules/electron/dist/locales/en-US.pak",
+                "to": "locales/en-US.pak"
             }
+        ],
+        "extraFiles": [],
+        "directories": {
+            "buildResources": "build"
         }
+    }
+}
