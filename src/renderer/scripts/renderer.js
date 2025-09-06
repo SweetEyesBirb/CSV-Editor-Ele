@@ -11,6 +11,10 @@ ipcRenderer.on('toggle-non-english', (event, state) => {
   allowNonEnglish = state;
   console.log(state)
   showToast(`Non-English characters ${state ? "enabled" : "disabled"}`);
+
+  // Always re-check cells whenever toggle changes
+  const cells = document.querySelectorAll('#tableContainer td');
+  cells.forEach(cell => validateCellContent(cell, true));
 });
 
 
@@ -674,7 +678,7 @@ function showToast(message, duration = 3000) {
 function validateCellContent(cell, shToast = true) {
   const text = cell.textContent;
 
-  // /[^\x00-\x7F]/  
+  // '/[^\x00-\x7F]/'
   if (!allowNonEnglish && /[^\x00-\x7F]/.test(text)) {
     cell.classList.add('invalid-char');
     // Optional: replace text, warn user, etc.
@@ -691,12 +695,9 @@ function validateCellContent(cell, shToast = true) {
 
 
 function hasNonEnglishCharacters() {
-  const cells = document.querySelectorAll('#tableContainer td');
+  const cells = document.querySelectorAll('#tableContainer td'); // selector seems to target all td elements
 
-  if (!Array.from(cells).some(cell => { validateCellContent(cell, false) })) {
-    return true
-  } else {
-    return false
-  }
+  // Return true if ANY cell is invalid
+  return Array.from(cells).some(cell => !validateCellContent(cell, false));
 
 }
