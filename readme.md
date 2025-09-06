@@ -1,11 +1,15 @@
 # This is a CSV editor desktop application
 
-License: Custom License
 
-This app is free to download for personal use. You may not redistribute, sell, or host this app for commercial purposes.
+### Features
+- Enforces utf-8 encoding. It is useful in some use cases where files saved using other encodings like JIS or SHIF-JIS create compatibility issues. This feature can be turned off from the menu.
+- Comes with six themes to choose from.
+- Right click on column or row headers for editing options.
 
 
-Copyright © 2025 SweetEyesBirb. All Rights Reserved.
+### License: Custom License
+- See licence.md
+
 
 ### Instructions
 
