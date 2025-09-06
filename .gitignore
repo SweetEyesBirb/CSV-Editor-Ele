@@ -3,3 +3,5 @@ notes.txt
 brython*
 pyscript*
 pyodide*
+dist/
+THIRD_PARTY_LICENSES.txt
