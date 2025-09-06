@@ -13,7 +13,8 @@ function createWindow() {
       preload: path.join(__dirname, 'renderer', 'scripts', 'preload.js'),
       nodeIntegration: true,
       contextIsolation: false
-    }
+    },
+    icon: path.join(__dirname, 'assets/icons/csv_app_light.ico') // relative to main.js
   });
 
   const filePath = path.join(__dirname, 'renderer', 'index.html');
