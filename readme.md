@@ -2,7 +2,7 @@
 
 
 ### Features
-- Enforces utf-8 encoding. It is useful in some use cases where files saved using other encodings like JIS or SHIF-JIS create compatibility issues. This feature can be turned off from the menu.
+- Enforces English characters. It is useful in some use cases where files saved using non-English characters create compatibility issues. This feature can be turned off from the menu.
 - Comes with six themes to choose from.
 - Right click on column or row headers for editing options.
 
